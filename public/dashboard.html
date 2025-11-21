@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard - Analista de Saúde Digital">
+    <title>Dashboard | Analista de Saúde Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav>
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+            </svg>
+            <span>Analista de Saúde Digital</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insights.html">Insights</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <div class="card">
+            <h1>📊 Dashboard de Monitoramento</h1>
+            <p>Simulação de leitura de dados do seu smartwatch em tempo real. Clique no botão abaixo para gerar uma análise com dados simulados.</p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <button id="btn-analisar" class="btn">🔍 Analisar Dados</button>
+            </div>
+        </div>
+
+        <!-- Alertas -->
+        <div id="alert-box" class="alert-box"></div>
+
+        <!-- Grid de Métricas -->
+        <div class="dashboard-grid">
+            <!-- Emoção -->
+            <div class="metric-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="value" id="emocao-valor">--</div>
+                <div class="label">Emoção Atual</div>
+                <div class="status" id="emocao-status">Aguardando</div>
+            </div>
+
+            <!-- Batimentos Cardíacos -->
+            <div class="metric-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="value" id="bpm-valor">--</div>
+                <div class="label">Batimentos (BPM)</div>
+                <div class="status" id="bpm-status">Aguardando</div>
+            </div>
+
+            <!-- Oxigenação -->
+            <div class="metric-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <div class="value" id="spo2-valor">--</div>
+                <div class="label">Oxigenação (SPO2)</div>
+                <div class="status" id="spo2-status">Aguardando</div>
+            </div>
+
+            <!-- Sono -->
+            <div class="metric-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 9.74l-7.19-.62L12 2.5 9.19 9.12 2 9.74l5.46 4.73-1.64 7.03L12 17.77l6.18 3.73-1.63-7.03L22 9.74zM12 15.9V6.6l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.9z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="value" id="sono-valor">--</div>
+                <div class="label">Horas de Sono</div>
+                <div class="status" id="sono-status">Aguardando</div>
+            </div>
+
+            <!-- Estresse -->
+            <div class="metric-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="value" id="estresse-valor">--</div>
+                <div class="label">Nível de Estresse</div>
+                <div class="status" id="estresse-status">Aguardando</div>
+            </div>
+        </div>
+
+        <!-- Status Geral -->
+        <div class="card">
+            <h2>📈 Status Geral do Dia</h2>
+            <p id="status-geral">Clique em "Analisar Dados" para ver o status geral baseado nas métricas coletadas.</p>
+        </div>
+
+        <!-- Botão para Insights -->
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="insights.html" class="btn btn-secondary" id="btn-insights" style="display: none;">💡 Ver Recomendações</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Atualizar status geral quando dados forem analisados
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnAnalisar = document.getElementById('btn-analisar');
+            const btnInsights = document.getElementById('btn-insights');
+            const statusGeral = document.getElementById('status-geral');
+
+            if (btnAnalisar) {
+                btnAnalisar.addEventListener('click', function() {
+                    setTimeout(() => {
+                        const dadosStr = localStorage.getItem('dadosAnalise');
+                        if (dadosStr) {
+                            const dados = JSON.parse(dadosStr);
+                            
+                            // Calcular status geral
+                            let status = 'Bom';
+                            let cor = 'good';
+                            let descricao = '';
+
+                            const problemas = [];
+                            if (dados.estresse > 70) problemas.push('estresse alto');
+                            if (dados.bpm > 100) problemas.push('batimentos elevados');
+                            if (dados.spo2 < 95) problemas.push('oxigenação baixa');
+                            if (dados.sono < 5) problemas.push('sono insuficiente');
+
+                            if (problemas.length > 2) {
+                                status = 'Crítico';
+                                cor = 'danger';
+                                descricao = 'Múltiplos indicadores preocupantes detectados. Recomendamos atenção imediata e pausas estratégicas.';
+                            } else if (problemas.length > 0) {
+                                status = 'Atenção';
+                                cor = 'warning';
+                                descricao = `Alguns indicadores requerem atenção: ${problemas.join(', ')}. Consulte as recomendações para ações específicas.`;
+                            } else {
+                                status = 'Bom';
+                                cor = 'good';
+                                descricao = 'Seus indicadores estão dentro dos parâmetros saudáveis. Continue mantendo seus hábitos de bem-estar!';
+                            }
+
+                            statusGeral.innerHTML = `
+                                <p><strong>Status:</strong> <span class="status ${cor}">${status}</span></p>
+                                <p>${descricao}</p>
+                                <p><strong>Última atualização:</strong> ${dados.timestamp}</p>
+                            `;
+
+                            btnInsights.style.display = 'inline-block';
+                        }
+                    }, 1600);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+

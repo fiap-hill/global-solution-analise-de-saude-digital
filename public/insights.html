@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Insights e Recomendações - Analista de Saúde Digital">
+    <title>Insights | Analista de Saúde Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav>
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+            </svg>
+            <span>Analista de Saúde Digital</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insights.html">Insights</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <div class="card">
+            <h1>💡 Insights e Recomendações Personalizadas</h1>
+            <p>Com base na análise dos seus dados biométricos e emocionais, geramos recomendações personalizadas para otimizar seu bem-estar, produtividade e equilíbrio no trabalho.</p>
+            <p style="margin-top: 1rem;"><strong>💡 Dica:</strong> As recomendações são ordenadas por prioridade. Priorize ações de alta prioridade para melhorar rapidamente seu bem-estar.</p>
+        </div>
+
+        <!-- Container de Insights (será preenchido pelo JavaScript) -->
+        <div id="insights-container">
+            <div class="card">
+                <p>Carregando recomendações...</p>
+            </div>
+        </div>
+
+        <!-- Informações Adicionais -->
+        <div class="card">
+            <h2>📚 Sobre as Recomendações</h2>
+            <p>Nossas recomendações são baseadas em evidências científicas sobre bem-estar, produtividade e saúde mental no trabalho. Elas são geradas dinamicamente com base nos seus dados atuais.</p>
+
+            <h3>Categorias de Recomendações:</h3>
+            <ul style="margin-left: 2rem; line-height: 2;">
+                <li><strong>Bem-estar Emocional:</strong> Técnicas de mindfulness, respiração, e gestão de estresse.</li>
+                <li><strong>Saúde Física:</strong> Monitoramento de batimentos cardíacos, oxigenação e sinais vitais.</li>
+                <li><strong>Descanso:</strong> Otimização de padrões de sono e recuperação.</li>
+                <li><strong>Produtividade:</strong> Identificação de momentos ideais para trabalho focado.</li>
+                <li><strong>Pausas Inteligentes:</strong> Timing otimizado para pausas e recuperação.</li>
+                <li><strong>Trabalho Híbrido:</strong> Estratégias para equilíbrio em ambientes híbridos.</li>
+            </ul>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <button id="btn-novo-diagnostico" class="btn">🔄 Novo Diagnóstico</button>
+            <a href="dashboard.html" class="btn btn-secondary" style="margin-left: 1rem;">📊 Voltar ao Dashboard</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        .insight-card .action {
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            background: var(--light-blue);
+            border-radius: 8px;
+            color: var(--dark-blue);
+            font-size: 0.9rem;
+        }
+    </style>
+</body>
+</html>
+
+

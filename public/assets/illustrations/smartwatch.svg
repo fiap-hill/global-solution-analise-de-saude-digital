@@ -1,0 +1,31 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Smartwatch -->
+    <rect x="150" y="80" width="100" height="140" rx="20" fill="#0066ff" opacity="0.9"/>
+    <rect x="160" y="90" width="80" height="120" rx="10" fill="#ffffff"/>
+    
+    <!-- Tela do Smartwatch -->
+    <rect x="170" y="100" width="60" height="100" rx="5" fill="#e6f2ff"/>
+    
+    <!-- Coração na tela -->
+    <path d="M200 130 C200 125, 205 125, 205 130 C205 135, 200 150, 200 150 C200 150, 195 135, 195 130 C195 125, 200 125, 200 130 Z" fill="#f44336"/>
+    
+    <!-- Números na tela -->
+    <text x="200" y="170" text-anchor="middle" font-size="16" font-weight="bold" fill="#0066ff">72 BPM</text>
+    <text x="200" y="190" text-anchor="middle" font-size="12" fill="#666">98% SPO2</text>
+    
+    <!-- Gráfico na tela -->
+    <polyline points="175,200 185,195 195,200 205,190 215,195 225,200" fill="none" stroke="#00d4ff" stroke-width="2"/>
+    
+    <!-- Pulseiras -->
+    <rect x="140" y="100" width="20" height="100" rx="10" fill="#003d7a"/>
+    <rect x="240" y="100" width="20" height="100" rx="10" fill="#003d7a"/>
+    
+    <!-- Linhas de conexão -->
+    <line x1="200" y1="220" x2="200" y2="250" stroke="#0066ff" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Nuvem de dados -->
+    <ellipse cx="200" cy="280" rx="100" ry="15" fill="#e6f2ff" opacity="0.7"/>
+    <text x="200" y="285" text-anchor="middle" font-size="14" fill="#0066ff" font-weight="bold">Dados + IA = Insights</text>
+</svg>
+
+
