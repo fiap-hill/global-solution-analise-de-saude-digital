@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fale Conosco - Smart Work">
+    <title>Fale Conosco | Smart Work</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav>
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+            </svg>
+            <span>Smart Work</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="fale-conosco.html">Fale Conosco</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <div class="page-header">
+            <h1>📧 Fale Conosco</h1>
+            <p>Entre em contato conosco para dúvidas, sugestões ou suporte</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="card">
+                <div class="card-header" style="margin-bottom: 1.5rem;">
+                    <h2>Envie sua Mensagem</h2>
+                </div>
+
+                <form id="contactForm">
+                    <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label required">Nome</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="firstName" 
+                                name="firstName" 
+                                autocomplete="given-name" 
+                                required
+                                placeholder="Seu nome"
+                            >
+                            <div class="invalid-feedback">Por favor, informe seu nome.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label required">Sobrenome</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="lastName" 
+                                name="lastName" 
+                                autocomplete="family-name" 
+                                required
+                                placeholder="Seu sobrenome"
+                            >
+                            <div class="invalid-feedback">Por favor, informe seu sobrenome.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label required">E-mail</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            required
+                            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                            placeholder="usuario@dominio.com"
+                            aria-describedby="emailHelp emailError"
+                            autocomplete="email"
+                        >
+                        <div id="emailHelp" class="form-text">Digite um e-mail válido (ex: xxxxxxx@xxxxx.com)</div>
+                        <div id="emailError" class="invalid-feedback">Digite um e-mail válido</div>
+                    </div>
+                    <style>
+                        /* Mostrar .invalid-feedback automaticamente quando o campo estiver inválido e não vazio */
+                        #email:invalid:not(:placeholder-shown) + #emailHelp + #emailError {
+                            display: block;
+                        }
+                    </style>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Telefone</label>
+                        <input 
+                            type="tel" 
+                            inputmode="tel" 
+                            class="form-control" 
+                            id="phone" 
+                            name="phone" 
+                            autocomplete="tel"
+                            placeholder="(99) 99999-9999" 
+                            maxlength="20" 
+                            aria-describedby="phoneHelp"
+                        >
+                        <div class="form-text" id="phoneHelp">Digite apenas números ou use formatação. Validação aceitará 10 ou 11 dígitos.</div>
+                        <div class="invalid-feedback">
+                            Por favor, informe um telefone válido (10 ou 11 dígitos).
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label required">Assunto</label>
+                        <select class="form-select" id="subject" name="subject" autocomplete="off" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="duvida">Dúvida sobre produtos</option>
+                            <option value="suporte">Suporte técnico</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="parceria">Parceria</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, selecione um assunto.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label required">Mensagem</label>
+                        <textarea 
+                            class="form-control" 
+                            id="message" 
+                            name="message" 
+                            rows="5" 
+                            autocomplete="off" 
+                            required 
+                            minlength="10"
+                            placeholder="Escreva sua mensagem aqui..."
+                        ></textarea>
+                        <div class="invalid-feedback">
+                            Por favor, escreva uma mensagem com pelo menos 10 caracteres.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        📤 Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+
+            <!-- Informações Adicionais -->
+            <div class="card" style="margin-top: 2rem;">
+                <h2>📞 Outras Formas de Contato</h2>
+                <p>Além do formulário acima, você também pode nos contatar através de:</p>
+                <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                    <li><strong>E-mail:</strong> contato@smartwork.com.br</li>
+                    <li><strong>Telefone:</strong> (11) 9999-9999</li>
+                    <li><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 9h às 18h</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Formatação de telefone
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneInput = document.getElementById('phone');
+            
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.length > 11) {
+                        value = value.slice(0, 11);
+                    }
+                    
+                    if (value.length > 0) {
+                        if (value.length <= 10) {
+                            value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                        } else {
+                            value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                        }
+                    }
+                    
+                    e.target.value = value;
+                });
+
+                // Validação de telefone
+                phoneInput.addEventListener('blur', function() {
+                    const value = this.value.replace(/\D/g, '');
+                    if (value.length > 0 && value.length !== 10 && value.length !== 11) {
+                        this.setCustomValidity('Telefone deve ter 10 ou 11 dígitos');
+                        this.classList.add('invalid');
+                    } else {
+                        this.setCustomValidity('');
+                        this.classList.remove('invalid');
+                    }
+                });
+            }
+
+            // Validação de formulário
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Validação HTML5
+                    if (!contactForm.checkValidity()) {
+                        contactForm.classList.add('was-validated');
+                        showMessage('Por favor, preencha todos os campos obrigatórios corretamente.', 'error');
+                        return;
+                    }
+
+                    // Validação adicional de telefone
+                    const phone = document.getElementById('phone').value.replace(/\D/g, '');
+                    if (phone.length > 0 && phone.length !== 10 && phone.length !== 11) {
+                        showMessage('Por favor, informe um telefone válido (10 ou 11 dígitos).', 'error');
+                        return;
+                    }
+
+                    // Simular envio
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '⏳ Enviando...';
+                    submitBtn.disabled = true;
+
+                    // Simular delay de envio
+                    setTimeout(() => {
+                        showMessage('✅ Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+                        contactForm.reset();
+                        contactForm.classList.remove('was-validated');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+
+                        // Scroll para a mensagem
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 1500);
+                });
+
+                // Validação em tempo real
+                const inputs = contactForm.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('blur', function() {
+                        if (this.checkValidity()) {
+                            this.classList.remove('invalid');
+                        } else {
+                            this.classList.add('invalid');
+                        }
+                    });
+
+                    input.addEventListener('input', function() {
+                        if (this.checkValidity()) {
+                            this.classList.remove('invalid');
+                        }
+                    });
+                });
+            }
+
+            function showMessage(text, type) {
+                if (!formMessage) return;
+                
+                formMessage.textContent = text;
+                formMessage.className = `form-message ${type} show`;
+                
+                // Auto-hide após 5 segundos para mensagens de sucesso
+                if (type === 'success') {
+                    setTimeout(() => {
+                        formMessage.classList.remove('show');
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

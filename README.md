@@ -1,8 +1,8 @@
-# 🧠💙 Analista de Saúde Digital
+# 🧠💙 Smart Work
 
 ## 📋 Sobre o Projeto
 
-**Analista de Saúde Digital** é uma solução MVP desenvolvida para a Global Solution 2025/2, focada no tema **Futuro do Trabalho**. A plataforma analisa dados biométricos e emocionais coletados por smartwatches e oferece recomendações personalizadas para bem-estar, produtividade e equilíbrio no trabalho.
+**Smart Work** é uma solução MVP desenvolvida para a Global Solution 2025/2, focada no tema **Futuro do Trabalho**. A plataforma analisa dados biométricos e emocionais coletados por smartwatches e oferece recomendações personalizadas para bem-estar, produtividade e equilíbrio no trabalho.
 
 ## 🎯 Objetivos
 

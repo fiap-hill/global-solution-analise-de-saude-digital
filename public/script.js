@@ -1,5 +1,5 @@
 // ============================================
-// Analista de Saúde Digital - JavaScript
+// Smart Work - JavaScript
 // ============================================
 
 // ============================================
@@ -334,5 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
